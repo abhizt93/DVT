@@ -1,0 +1,31 @@
++dvt_setenv+UVM_ML_HOME=$DVT_PREDEFINED_PROJECTS/libs/UVM_ML-1.6/
+
+// UVM
++dvt_setenv+UVM_HOME=${UVM_ML_HOME}/ml/frameworks/uvm/sv/1.1d-ml
+-uvm
+
+// SystemC
++dvt_systemc
+
+// UVM-ML SV
+${UVM_ML_HOME}/ml/adapters/uvm_sv/ml_uvm_pkg.sv
++incdir+${UVM_ML_HOME}/ml/adapters/uvm_sv/
+
+// UVM-ML SC
+-DSC_INCLUDE_DYNAMIC_PROCESSES
+-I${UVM_ML_HOME}/ml/frameworks/uvm/sc   
+-I${UVM_ML_HOME}/ml/adapters/uvm_sc 
+-I${UVM_ML_HOME}/ml/adapters/uvm_sc/common 
+-I${UVM_ML_HOME}/ml/adapters/uvm_sc/ncsc
+-I${UVM_ML_HOME}/ml/backplane
+${UVM_ML_HOME}/ml/adapters/uvm_sv/uvm_ml_sv.h
+${UVM_ML_HOME}/ml/adapters/uvm_sv/uvm_ml_sv.cpp
+
+// Our SV files 
+top.sv
+-incdir ./
+
+// Our C files
+main.c
+-I./
+
